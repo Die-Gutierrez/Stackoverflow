@@ -1,23 +1,43 @@
 #include <iostream>
-using std::string;
-// Prototipo de funciones
-string aMayuscula(string cadena);
-string aMinuscula(string cadena);
-int main() {
-  string cadena = "Parzibyte.me";
+#include <string>
 
-  std::cout << "Original: " + cadena;
-  string mayuscula = aMayuscula(cadena);
-  std::cout << "\nMayúscula: " + mayuscula;
-  string minuscula = aMinuscula(cadena);
-  std::cout << "\nMinúscula: " + minuscula;
-}
+using namespace std;
 
-string aMayuscula(string cadena) {
-  for (int i = 0; i < cadena.length(); i++) cadena[i] = toupper(cadena[i]);
-  return cadena;
+string mayus(string cadena);
+string mini(string cadena);
+
+int main()
+{
+    string cadena[5];
+    string mayuscula[5];
+    string miniscula[5];
+
+    for(int i=0;i<5;i++)
+    {
+        cout<<"Ingrese un texto: "; fflush(stdin); getline(cin, cadena[i]);
+    }
+    for(int i=0;i<5;i++)
+    {
+        mayuscula[i] = mayus(cadena[i]);
+        cout<<mayuscula[i]<<endl;
+    }
+
+
+    return 0;
 }
-string aMinuscula(string cadena) {
-  for (int i = 0; i < cadena.length(); i++) cadena[i] = tolower(cadena[i]);
-  return cadena;
+string mayus(string cadena)
+{
+    for(int i=0;i<cadena.size();i++)
+    {
+        cadena[i] = toupper(cadena[i]);
+    }
+    return cadena;
+}
+string mini(string cadena)
+{
+    for(int i=0;i<cadena.size();i++)
+    {
+        cadena[i] = tolower(cadena[i]);
+    }
+    return cadena;
 }
