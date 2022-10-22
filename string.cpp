@@ -15,12 +15,27 @@ int main()
     // Capacidad actual del objeto de class string, llamado cadena.
     cout<<"Capacidad del objeto <cadena> : "<<cadena.capacity()<<endl;
 
+    // Posicion 
+    cout<<cadena.at(5)<<endl;
+
+    // Replace 
+    cout<<cadena.replace(0,5,"Alonso")<<endl;
+
     // Desfragmentando una parte del texto sin afectar al texto original.
     cout<<"Fragmento de una cadena de texto: "<<cadena.substr(6,9)<<endl;
     cout<<cadena<<endl;
     string cadena3;
     cadena3 = cadena.substr(6,9);
     cout<<cadena3<<endl;
+
+    // Comparar cadenas.
+    // Si son iguales arroja " 0 " osea falso.
+    // Si son diferentes arroja numero diferente a " 0 ".
+    string c ("hola");
+    string c1 ("hola");
+    cout<<c.compare(c1)<<endl;
+    if(!c.compare(c1)) cout<<"Es verdadero"<<endl;
+    else cout<<"Es falso"<<endl;
 
     // Limpiando un objeto de clase string de su cadena de texto.
     cout<<cadena3<<endl<<"Limpiando ..."<<endl;
